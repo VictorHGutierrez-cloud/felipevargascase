@@ -1,0 +1,56 @@
+# DISTRIBUSION CLIENT ONBOARDING STRATEGY
+
+## OBJECTIVE
+Your task is to develop a strategy for identifying and onboarding target clients in your market onto the Distribusion platform. This strategy should encompass the following key aspects:
+
+---
+
+## 1. MARKET RESEARCH AND IDENTIFICATION
+
+**Task:** Research and identify potential target companies operating in different regions of your market.
+
+**Requirements:**
+- The research doesn't need to be exhaustive
+- Should reflect your high-level understanding of the market
+- Consider Distribusion's product-market fit
+
+---
+
+## 2. ENGAGEMENT STRATEGY
+
+**Task:** Develop a brief engagement strategy to approach and connect with the identified companies.
+
+**Requirements:**
+- Based on your understanding and available information from various sources
+- Dedicate time to explain how you would concretely engage and introduce Distribusion
+- Include specific approaches and methodologies
+
+---
+
+## 3. METRICS AND MEASUREMENT
+
+**Task:** Define 3 key performance indicators (KPIs) to measure the success of your business development and onboarding efforts.
+
+**Requirements:**
+- Select meaningful metrics that align with business objectives
+- Ensure KPIs are measurable and actionable
+- Consider both quantitative and qualitative measures
+
+---
+
+## 4. PITCH
+
+**Task:** Describe how you would explain Distribusion's value proposition to a potential client.
+
+**Requirements:**
+- Clearly articulate why they should choose Distribusion
+- Compare against other options they may have
+- Focus on unique benefits and competitive advantages
+
+---
+
+## DELIVERABLES EXPECTED
+- Comprehensive market research findings
+- Detailed engagement strategy
+- Three defined KPIs with measurement criteria
+- Compelling value proposition pitch

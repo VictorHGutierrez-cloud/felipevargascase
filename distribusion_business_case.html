@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribusion - Strategic Client Onboarding & Market Penetration</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <!-- Lucide icons for professional visuals -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fallback CSS in case Tailwind doesn't load -->
+    <style>
+        /* Basic fallback styles */
+        .fallback-styles {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .slide-fallback {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button-fallback {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button-fallback:hover {
+            background-color: #2563eb;
+        }
+        .button-fallback:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+    </style>
+    
+    <style>
+        /* Define Inter font for a clean, modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Fixed size for presentation view (simulating 16:9 aspect ratio) */
+        .presentation-slide {
+            width: 1024px;
+            height: 576px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px 60px;
+            position: relative;
+            display: none; /* Controlled by JavaScript */
+            transition: opacity 0.3s ease-in-out;
+        }
+        .header-title {
+            color: #2563EB; /* Blue */
+            font-weight: 800;
+        }
+        .footer-logo {
+            color: #2563EB; /* Blue */
+            font-weight: 700;
+        }
+        /* Styling for charts to fit the slide */
+        .chart-container {
+            width: 100%;
+            height: 380px;
+            margin-top: 10px;
+        }
+        /* Custom list style for icons */
+        .icon-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+        .icon-list li svg {
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        /* Ensure proper alignment for flex items with icons */
+        .flex.items-center i[data-lucide] {
+            flex-shrink: 0;
+        }
+        /* Better spacing for chart containers */
+        .chart-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="presentation-container" class="relative">
+    <!-- Navigation Controls -->
+    <div class="absolute inset-x-0 bottom-0 flex justify-center space-x-4 mb-4 z-10 pointer-events-none">
+        <button id="prevBtn" class="bg-gray-700 hover:bg-gray-800 text-white font-medium py-1 px-3 rounded-full shadow-md transition duration-150 ease-in-out pointer-events-auto text-sm">
+            &larr; Previous
+        </button>
+        <div id="pageNumber" class="flex items-center text-gray-800 bg-white px-3 py-1 rounded-full shadow-sm pointer-events-none font-medium text-sm"></div>
+        <button id="nextBtn" class="text-white font-medium py-1 px-3 rounded-full shadow-md transition duration-150 ease-in-out pointer-events-auto text-sm" style="background-color: #2563EB;" onmouseover="this.style.backgroundColor='#1D4ED8'" onmouseout="this.style.backgroundColor='#2563EB'">
+            Next &rarr;
+        </button>
+    </div>
+
+    <!-- --------------------------------- SLIDE CONTENT START --------------------------------- -->
+
+    <!-- SLIDE 1: TITLE SLIDE -->
+    <div id="slide-1" class="presentation-slide flex flex-col justify-between">
+        <div class="text-right">
+            <span class="text-lg font-semibold text-gray-500">Business Development Strategy</span>
+        </div>
+        <div class="text-center mt-[-50px]">
+            <h1 class="text-6xl header-title mb-6">DISTRIBUSION</h1>
+            <h2 class="text-4xl text-gray-700 font-light mb-10">Strategic Client Onboarding & Market Penetration</h2>
+            <p class="text-2xl font-medium mb-2" style="color: #2563EB;">Targeting High-Leverage B2B Clients in the $950B+ Distribution Market</p>
+        </div>
+        <div class="grid grid-cols-2 text-xl text-gray-600 border-t pt-4">
+            <div>
+                <p>Business Development Strategy</p>
+                <p>Market Research & Client Acquisition</p>
+            </div>
+            <div class="text-right"> <br>
+                <p>Date: December 2024</p>
+                <p class="footer-logo text-1xl">DISTRIBUSION <span class="text-gray-800">PLATFORM</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: AGENDA -->
+    <div id="slide-2" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Agenda</h1>
+        <ul class="space-y-4 text-2xl text-gray-700 font-light mt-1">
+            <li class="flex items-center"><i data-lucide="search" class="w-8 h-8 mr-4 flex-shrink-0" style="color: #2563EB;"></i> Market Research & Strategic Segmentation</li>
+            <li class="flex items-center"><i data-lucide="target" class="w-8 h-8 mr-4 flex-shrink-0" style="color: #2563EB;"></i> Tiered Engagement Strategy</li>
+            <li class="flex items-center ml-10 text-xl font-medium text-gray-600"><i data-lucide="chevrons-right" class="w-6 h-6 mr-3 flex-shrink-0"></i> APAC Super Apps Priority</li>
+            <li class="flex items-center ml-10 text-xl font-medium text-gray-600"><i data-lucide="chevrons-right" class="w-6 h-6 mr-3 flex-shrink-0"></i> 90-Day POC Framework</li>
+            <li class="flex items-center"><i data-lucide="bar-chart-3" class="w-8 h-8 mr-4 flex-shrink-0" style="color: #2563EB;"></i> Advanced KPI Framework (TTFT, ARPR, CSV)</li>
+            <li class="flex items-center"><i data-lucide="message-square" class="w-8 h-8 mr-4 flex-shrink-0" style="color: #2563EB;"></i> Value Proposition: Grow Revenue & Simplify Operations</li>
+            <li class="flex items-center"><i data-lucide="trending-up" class="w-8 h-8 mr-4 flex-shrink-0" style="color: #2563EB;"></i> Competitive Differentiation & Market Position</li>
+            <li class="flex items-center"><i data-lucide="help-circle" class="w-8 h-8 mr-4 flex-shrink-0" style="color: #2563EB;"></i> Q&A</li>
+        </ul>
+    </div>
+
+    <!-- SLIDE 3: DISTRIBUSION STRATEGIC OVERVIEW -->
+    <div id="slide-3" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Distribusion: The Intermodal Glue</h1>
+        <div class="grid grid-cols-2 gap-8 text-gray-700">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4" style="color: #2563EB;">Core Value Proposition</h2>
+                <ul class="space-y-3 text-lg icon-list">
+                    <li><i data-lucide="globe" class="text-gray-500"></i> Universal Standardization Layer for Ground Transport</li>
+                    <li><i data-lucide="bus" class="text-gray-500"></i> Full Surface Transport: Bus, Rail, Ferry, Transfers</li>
+                    <li><i data-lucide="smartphone" class="text-gray-500"></i> "One Contract. One Integration. One Settlement"</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold mb-4" style="color: #2563EB;">Market Opportunity</h2>
+                <ul class="space-y-3 text-lg icon-list">
+                    <li><i data-lucide="trending-up" class="text-gray-500"></i> Intermodal Transportation: 14.20% CAGR</li>
+                    <li><i data-lucide="dollar-sign" class="text-gray-500"></i> Distribution Logistics: $9.5T Market</li>
+                    <li><i data-lucide="users" class="text-gray-500"></i> APAC Mobility: $337B by 2030</li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-8 text-xl font-medium border-t pt-4 text-gray-600">
+            Transforming fragmented ground transportation from low-margin operational necessity into high-margin, seamlessly integrated content vertical through advanced retailing technology.
+        </p>
+    </div>
+
+    <!-- SLIDE 4: MARKET RESEARCH METHODOLOGY -->
+    <div id="slide-4" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-6">Market Research Methodology</h1>
+        <p class="text-center text-xl font-semibold text-gray-700 mt-1 mb-5">Data-Driven Target Identification Process</p>
+        
+        <!-- Process Flow Container -->
+        <div class="flex flex-col lg:flex-row justify-between items-stretch space-y-4 lg:space-y-0 lg:space-x-2">
+            
+            <!-- STEP 1: Market Analysis -->
+            <div class="lg:w-1/5 step-container relative">
+                <div class="step-card bg-white rounded-xl p-4 border-t-4 border-blue-500 flex flex-col justify-start">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-600"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <h2 class="text-sm font-bold text-gray-900">1. MARKET ANALYSIS</h2>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-xs font-semibold text-blue-600 mb-2">Industry Segmentation</p>
+                        <ul class="list-disc pl-3 text-gray-600 text-xs space-y-1">
+                            <li>OTA market size analysis</li>
+                            <li>Regional transportation providers</li>
+                            <li>Enterprise travel solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Competitor Mapping -->
+            <div class="lg:w-1/5 step-container relative">
+                <div class="step-card bg-white rounded-xl p-4 border-t-4 border-indigo-500 flex flex-col justify-start">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-600"><path d="M4 7V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M12 11v6"/><path d="M12 7v4"/><path d="M8 11h8"/></svg>
+                        <h2 class="text-sm font-bold text-gray-900">2. COMPETITOR MAPPING</h2>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-xs font-semibold text-indigo-600 mb-2">Market Positioning</p>
+                        <ul class="list-disc pl-3 text-gray-600 text-xs space-y-1">
+                            <li>Direct & indirect competitors</li>
+                            <li>Market share analysis</li>
+                            <li>Gap identification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Target Profiling -->
+            <div class="lg:w-1/5 step-container relative">
+                <div class="step-card bg-white rounded-xl p-4 border-t-4 border-sky-500 flex flex-col justify-start">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-sky-600"><path d="m5 12 6-6 6 6"/><path d="m5 18 6-6 6 6"/></svg>
+                        <h2 class="text-sm font-bold text-gray-900">3. TARGET PROFILING</h2>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-xs font-semibold text-sky-600 mb-2">Ideal Customer Profile</p>
+                        <ul class="list-disc pl-3 text-gray-600 text-xs space-y-1">
+                            <li>Company size & revenue</li>
+                            <li>Technology adoption level</li>
+                            <li>Pain points identification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: Lead Scoring -->
+            <div class="lg:w-1/5 step-container relative">
+                <div class="step-card bg-white rounded-xl p-4 border-t-4 border-cyan-500 flex flex-col justify-start">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-cyan-600"><path d="M15.2 22a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4l9-9 7-7 4 4-7 7-9 9z"/><path d="M12 18h.01"/></svg>
+                        <h2 class="text-sm font-bold text-gray-900">4. LEAD SCORING</h2>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-xs font-semibold text-cyan-600 mb-2">Priority Ranking</p>
+                        <ul class="list-disc pl-3 text-gray-600 text-xs space-y-1">
+                            <li>High-value prospects</li>
+                            <li>Quick-win opportunities</li>
+                            <li>Long-term strategic targets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 5: Contact Research -->
+            <div class="lg:w-1/5 step-container relative">
+                <div class="step-card bg-white rounded-xl p-4 border-t-4 border-teal-500 flex flex-col justify-start">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-teal-600"><path d="M12 2a10 10 0 0 0-9 15.3l-1 4.7 4.7-1A10 10 0 1 0 12 2z"/></svg>
+                        <h2 class="text-sm font-bold text-gray-900">5. CONTACT RESEARCH</h2>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-xs font-semibold text-teal-600 mb-2">Decision Maker Mapping</p>
+                        <ul class="list-disc pl-3 text-gray-600 text-xs space-y-1">
+                            <li>Key stakeholders identification</li>
+                            <li>Contact information gathering</li>
+                            <li>Communication preferences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Methodology Summary -->
+        <div class="mt-1 mb-8 p-4 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+            <h3 class="text-lg font-semibold mb-2" style="color: #1D4ED8;">Research Framework Summary</h3>
+            <p class="text-sm text-gray-600">
+                This systematic approach ensures <strong>high-quality lead generation</strong> through <strong>data-driven segmentation</strong>, 
+                <strong>competitive intelligence</strong>, and <strong>personalized outreach strategies</strong> tailored to each market segment.
+            </p>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: STRATEGIC CLIENT SEGMENTATION MATRIX -->
+    <div id="slide-5" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Strategic Client Segmentation Matrix</h1>
+        <div class="grid grid-cols-3 gap-6 text-center">
+            <div class="p-6 rounded-lg bg-red-50 border-l-4 border-red-500">
+                <p class="text-sm font-semibold text-red-700">TIER 1: Strategic Growth</p>
+                <p class="text-3xl font-extrabold text-red-800 mt-1">Super Apps</p>
+                <p class="text-lg text-red-600 font-medium mt-1">APAC Mobility Leaders</p>
+                <ul class="text-sm text-gray-600 mt-3 text-left">
+                    <li>• Grab, Gojek, WeChat Pay</li>
+                    <li>• LATAM: Despegar, Decolar</li>
+                    <li>• Market: $337B by 2030</li>
+                    <li>• Pain: Technical fragmentation</li>
+                </ul>
+            </div>
+            <div class="p-6 rounded-lg bg-yellow-50 border-l-4 border-yellow-500">
+                <p class="text-sm font-semibold text-yellow-700">TIER 2: High Volume</p>
+                <p class="text-3xl font-extrabold text-yellow-800 mt-1">Global OTAs</p>
+                <p class="text-lg text-yellow-600 font-medium mt-1">GDS Integration Partners</p>
+                <ul class="text-sm text-gray-600 mt-3 text-left">
+                    <li>• Booking.com, Expedia</li>
+                    <li>• Amadeus, Sabre, Travelport</li>
+                    <li>• Market: $175B (NA), $144B (EU)</li>
+                    <li>• Pain: Low ground transport margins</li>
+                </ul>
+            </div>
+            <div class="p-6 rounded-lg bg-green-50 border-l-4 border-green-500">
+                <p class="text-sm font-semibold text-green-700">TIER 3: Specialized</p>
+                <p class="text-3xl font-extrabold text-green-800 mt-1">Wholesalers</p>
+                <p class="text-lg text-green-600 font-medium mt-1">Travel Wholesalers & TMCs</p>
+                <ul class="text-sm text-gray-600 mt-3 text-left">
+                    <li>• FIT/Group specialists</li>
+                    <li>• Corporate TMCs</li>
+                    <li>• Market: Complex itineraries</li>
+                    <li>• Pain: Manual documentation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-2 gap-8 text-gray-700">
+            <ul class="space-y-2 text-lg icon-list">
+                <li><i data-lucide="trending-up" class="text-gray-500"></i> Intermodal Market: 14.20% CAGR Growth</li>
+                <li><i data-lucide="users" class="text-gray-500"></i> APAC Priority: $337B vs $175B (NA) vs $144B (EU)</li>
+            </ul>
+            <ul class="space-y-2 text-lg icon-list">
+                <li><i data-lucide="globe" class="text-gray-500"></i> Distribution Logistics: $9.5T Total Addressable Market</li>
+                <li><i data-lucide="target" class="text-gray-500"></i> Strategy: Capture highest-growth mobility ecosystems first</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: MARKET SIZE & GROWTH ANALYSIS (Chart) -->
+    <div id="slide-6" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Market Size & Growth Analysis</h1>
+        <div class="chart-container">
+            <canvas id="marketSizeChart"></canvas>
+        </div>
+        <div class="grid grid-cols-3 mt-4 text-center border-t pt-4">
+            <div class="text-gray-700">
+                <p class="text-2xl font-bold">$9.5T</p>
+                <p class="text-sm">Distribution Logistics Market</p>
+            </div>
+            <div class="text-gray-700">
+                <p class="text-2xl font-bold">14.20%</p>
+                <p class="text-sm">Intermodal Transportation CAGR</p>
+            </div>
+            <div class="text-gray-700">
+                <p class="text-2xl font-bold">$337B</p>
+                <p class="text-sm">APAC Mobility by 2030</p>
+            </div>
+        </div>
+        <p class="text-center text-lg text-gray-600 mt-4 font-medium">APAC Super Apps represent the highest-growth opportunity, with mobility services outpacing North America and Europe combined.</p>
+    </div>
+
+    <!-- SLIDE 7: TIERED ENGAGEMENT STRATEGY -->
+    <div id="slide-7" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Tiered Engagement Strategy Framework</h1>
+        <div class="grid grid-cols-3 gap-6 mt-8">
+            <div class="p-4 rounded-lg bg-red-50 border-l-4 border-red-500">
+                <h3 class="text-xl font-semibold mb-3 text-red-700">TIER 1: Ecosystem Multiplier</h3>
+                <p class="text-sm font-semibold text-red-600 mb-2">Mobility Super Apps & Dominant OTAs</p>
+                <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• <strong>Focus:</strong> Market share & platform stickiness</li>
+                    <li>• <strong>Pitch:</strong> MaaS vision acceleration</li>
+                    <li>• <strong>Approach:</strong> 90-day POC with TTFT focus</li>
+                    <li>• <strong>Target:</strong> C-suite/VP decision makers</li>
+                </ul>
+            </div>
+            <div class="p-4 rounded-lg bg-yellow-50 border-l-4 border-yellow-500">
+                <h3 class="text-xl font-semibold mb-3 text-yellow-700">TIER 2: Margin Optimization</h3>
+                <p class="text-sm font-semibold text-yellow-600 mb-2">Global OTAs & GDS Partners</p>
+                <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• <strong>Focus:</strong> Technical debt reduction</li>
+                    <li>• <strong>Pitch:</strong> ARPR improvement & ROI</li>
+                    <li>• <strong>Approach:</strong> Financial analysis & efficiency</li>
+                    <li>• <strong>Target:</strong> Technology & finance teams</li>
+                </ul>
+            </div>
+            <div class="p-4 rounded-lg bg-green-50 border-l-4 border-green-500">
+                <h3 class="text-xl font-semibold mb-3 text-green-700">TIER 3: Operational Simplifier</h3>
+                <p class="text-sm font-semibold text-green-600 mb-2">Wholesalers & TMCs</p>
+                <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• <strong>Focus:</strong> Reliability & customization</li>
+                    <li>• <strong>Pitch:</strong> "One Settlement" simplicity</li>
+                    <li>• <strong>Approach:</strong> Back-office process elimination</li>
+                    <li>• <strong>Target:</strong> Operations & compliance teams</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-6 p-4 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+            <h3 class="text-lg font-semibold mb-2" style="color: #1D4ED8;">Strategic Approach: High-Touch Consultative Sales</h3>
+            <p class="text-sm text-gray-600">
+                All tiers focus on <strong>executive decision-makers</strong> with <strong>quantified economic impact</strong> of existing fragmentation, 
+                positioning Distribusion as the partner that unlocks measurable revenue streams through technical simplification.
+            </p>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: 90-DAY POC FRAMEWORK -->
+    <div id="slide-8" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-6">90-Day Proof of Concept Framework</h1>
+        <p class="text-center text-lg font-semibold text-gray-700 mb-6">Maximizing Time-to-First-Transaction (TTFT) for Strategic Partners</p>
+        
+        <!-- Process Flow -->
+        <div class="grid grid-cols-5 gap-3 mb-6">
+            <div class="text-center p-3 bg-blue-50 rounded-lg">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="search" class="w-5 h-5 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-blue-800 mb-1 text-sm">1. QUALIFICATION</h3>
+                <p class="text-xs text-gray-600">Fragmentation Assessment</p>
+            </div>
+            <div class="text-center p-3 bg-green-50 rounded-lg">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-green-800 mb-1 text-sm">2. POC SETUP</h3>
+                <p class="text-xs text-gray-600">API Sandbox & Engineers</p>
+            </div>
+            <div class="text-center p-3 bg-yellow-50 rounded-lg">
+                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-yellow-800 mb-1 text-sm">3. INTEGRATION</h3>
+                <p class="text-xs text-gray-600">Standardized API Connection</p>
+            </div>
+            <div class="text-center p-3 bg-purple-50 rounded-lg">
+                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-purple-800 mb-1 text-sm">4. FIRST TRANSACTION</h3>
+                <p class="text-xs text-gray-600">Revenue-Generating Booking</p>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg">
+                <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="handshake" class="w-5 h-5 text-white"></i>
+                </div>
+                <h3 class="font-semibold text-indigo-800 mb-1 text-sm">5. PARTNERSHIP</h3>
+                <p class="text-xs text-gray-600">Full Commercial Agreement</p>
+            </div>
+        </div>
+
+        <!-- Success Metrics -->
+        <div class="grid grid-cols-2 gap-4">
+            <div class="p-3 bg-green-50 rounded-lg border-l-4 border-green-500">
+                <h3 class="text-base font-semibold text-green-700 mb-2 flex items-center">
+                    <i data-lucide="target" class="w-4 h-4 mr-2"></i>
+                    POC Success Criteria
+                </h3>
+                <ul class="space-y-1 text-xs text-gray-700">
+                    <li>• <strong>TTFT Target:</strong> < 90 days for Tier 1 partners</li>
+                    <li>• <strong>Technical Validation:</strong> Seamless API integration</li>
+                    <li>• <strong>Commercial Proof:</strong> Revenue-generating transaction</li>
+                    <li>• <strong>Resource Efficiency:</strong> Minimal client development time</li>
+                </ul>
+            </div>
+            <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                <h3 class="text-base font-semibold text-blue-700 mb-2 flex items-center">
+                    <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                    Overcoming Integration Fatigue
+                </h3>
+                <ul class="space-y-1 text-xs text-gray-700">
+                    <li>• <strong>Dedicated Support:</strong> Specialized integration engineers</li>
+                    <li>• <strong>Rapid Validation:</strong> Faster than bespoke connections</li>
+                    <li>• <strong>Risk Mitigation:</strong> Minimal technical commitment</li>
+                    <li>• <strong>Speed-to-Market:</strong> Immediate commercial results</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: ADVANCED KPI FRAMEWORK -->
+    <div id="slide-9" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Advanced KPI Framework for Onboarding Success</h1>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="p-4 rounded-lg border-l-4" style="background-color: #EFF6FF; border-color: #2563EB;">
+                <h3 class="text-lg font-semibold flex items-center mb-3" style="color: #1D4ED8;"><i data-lucide="clock" class="w-5 h-5 mr-2 flex-shrink-0" style="color: #2563EB;"></i> 1. Adoption & Efficiency</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Time-to-First-Transaction (TTFT)</p>
+                        <p class="text-2xl font-extrabold" style="color: #2563EB;">< 90 Days</p>
+                        <p class="text-xs text-gray-600">Tier 1 strategic partners</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Integration Speed</p>
+                        <p class="text-2xl font-extrabold" style="color: #2563EB;">2-4 Weeks</p>
+                        <p class="text-xs text-gray-600">vs 3-12 months (competitors)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 rounded-lg border-l-4" style="background-color: #EFF6FF; border-color: #2563EB;">
+                <h3 class="text-lg font-semibold flex items-center mb-3" style="color: #1D4ED8;"><i data-lucide="trending-up" class="w-5 h-5 mr-2 flex-shrink-0" style="color: #2563EB;"></i> 2. Monetization & Value</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Ancillary Revenue Penetration Rate (ARPR)</p>
+                        <p class="text-2xl font-extrabold" style="color: #2563EB;">15%+</p>
+                        <p class="text-xs text-gray-600">Revenue per Passenger uplift</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Profit Center Transformation</p>
+                        <p class="text-2xl font-extrabold" style="color: #2563EB;">High-Margin</p>
+                        <p class="text-xs text-gray-600">vs low-margin necessity</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 rounded-lg border-l-4" style="background-color: #EFF6FF; border-color: #2563EB;">
+                <h3 class="text-lg font-semibold flex items-center mb-3" style="color: #1D4ED8;"><i data-lucide="shield" class="w-5 h-5 mr-2 flex-shrink-0" style="color: #2563EB;"></i> 3. Operational Depth</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Consolidated Settlement Volume (CSV)</p>
+                        <p class="text-2xl font-extrabold" style="color: #2563EB;">> 80%</p>
+                        <p class="text-xs text-gray-600">Within 12 months</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Platform Stickiness</p>
+                        <p class="text-2xl font-extrabold" style="color: #2563EB;">High</p>
+                        <p class="text-xs text-gray-600">Structural integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-6 p-4 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+            <h3 class="text-lg font-semibold mb-2" style="color: #1D4ED8;">KPI Strategic Rationale</h3>
+            <p class="text-sm text-gray-600">
+                These metrics validate Distribusion's twin value pillars: <strong>technical efficiency</strong> (TTFT) and <strong>commercial monetization</strong> (ARPR, CSV). 
+                They measure adoption success and long-term financial integration, ensuring the platform becomes indispensable for operational simplification.
+            </p>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: KPI TRACKING DASHBOARD (Chart) -->
+    <div id="slide-10" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">KPI Performance Tracking Dashboard</h1>
+        <div class="chart-container">
+            <canvas id="kpiTrackingChart"></canvas>
+        </div>
+        <div class="grid grid-cols-3 mt-4 text-center border-t pt-4">
+            <div class="text-gray-700">
+                <p class="text-2xl font-bold">< 90 Days</p>
+                <p class="text-sm">Time-to-First-Transaction</p>
+            </div>
+            <div class="text-gray-700">
+                <p class="text-2xl font-bold">15%+</p>
+                <p class="text-sm">Ancillary Revenue Penetration</p>
+            </div>
+            <div class="text-gray-700">
+                <p class="text-2xl font-bold">> 80%</p>
+                <p class="text-sm">Consolidated Settlement Volume</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: VALUE PROPOSITION: GROW REVENUE & SIMPLIFY OPERATIONS -->
+    <div id="slide-11" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Value Proposition: Grow Revenue & Simplify Operations</h1>
+        <div class="grid grid-cols-2 gap-8 mt-8">
+            <div>
+                <h3 class="text-2xl font-semibold mb-4" style="color: #2563EB;">GROW REVENUE (The 'Grow' Argument)</h3>
+                <ul class="space-y-3 text-lg text-gray-700 icon-list">
+                    <li><i data-lucide="globe" class="text-blue-600"></i> <strong>Intermodal Completion:</strong> Seamless end-to-end multi-modal journeys</li>
+                    <li><i data-lucide="trending-up" class="text-blue-600"></i> <strong>Profit Center Transformation:</strong> Advanced retailing & ARPR optimization</li>
+                    <li><i data-lucide="dollar-sign" class="text-blue-600"></i> <strong>Ancillary Revenue:</strong> Dynamic pricing, premium seats, CO₂ compensation</li>
+                    <li><i data-lucide="users" class="text-blue-600"></i> <strong>Customer Lifetime Value:</strong> Complete journey capture</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold mb-4" style="color: #2563EB;">SIMPLIFY OPERATIONS (The 'Simplify' Argument)</h3>
+                <ul class="space-y-3 text-lg text-gray-700 icon-list">
+                    <li><i data-lucide="zap" class="text-blue-600"></i> <strong>Technical Debt Elimination:</strong> One standardized integration vs dozens</li>
+                    <li><i data-lucide="shield" class="text-blue-600"></i> <strong>Financial Simplification:</strong> One contract, one settlement</li>
+                    <li><i data-lucide="clock" class="text-blue-600"></i> <strong>Rapid Integration:</strong> 2-4 weeks vs 3-12 months</li>
+                    <li><i data-lucide="settings" class="text-blue-600"></i> <strong>Operational Efficiency:</strong> Unified back-office management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-6 p-4 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+            <h3 class="text-lg font-semibold mb-2" style="color: #1D4ED8;">Strategic Impact</h3>
+            <p class="text-sm text-gray-600">
+                Distribusion transforms ground transportation from <strong>low-margin operational necessity</strong> into <strong>high-margin profit center</strong> 
+                while eliminating the technical and financial complexity that inhibits growth in the 14.20% CAGR intermodal market.
+            </p>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: COMPETITIVE LANDSCAPE DIFFERENTIATION -->
+    <div id="slide-12" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-6">Competitive Landscape Differentiation</h1>
+        <p class="text-center text-xl font-semibold text-gray-700 mt-4 mb-6">Distribusion's superior positioning against GDS and specialized platforms</p>
+        
+        <!-- Comparison Table -->
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">Platform Type</th>
+                        <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">Content Scope</th>
+                        <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">Integration Model</th>
+                        <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">Monetization Focus</th>
+                        <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">Back-Office Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-blue-50 transition-colors">
+                        <td class="border border-gray-300 px-4 py-3 font-bold" style="color: #2563EB;">DISTRIBUSION</td>
+                        <td class="border border-gray-300 px-4 py-3">Full Surface Transport (Bus, Rail, Ferry, Transfers)</td>
+                        <td class="border border-gray-300 px-4 py-3">Single, standardized, ground-optimized API</td>
+                        <td class="border border-gray-300 px-4 py-3">Advanced Retailing & High ARPR</td>
+                        <td class="border border-gray-300 px-4 py-3">"One Contract, One Settlement"</td>
+                    </tr>
+                    <tr class="hover:bg-yellow-50 transition-colors">
+                        <td class="border border-gray-300 px-4 py-3 font-bold text-yellow-700">GDS (Amadeus, Sabre, Travelport)</td>
+                        <td class="border border-gray-300 px-4 py-3">Broad but shallow ground content coverage</td>
+                        <td class="border border-gray-300 px-4 py-3">Single generalist API (superficial depth)</td>
+                        <td class="border border-gray-300 px-4 py-3">Limited advanced ground retailing</td>
+                        <td class="border border-gray-300 px-4 py-3">High settlement complexity</td>
+                    </tr>
+                    <tr class="hover:bg-red-50 transition-colors">
+                        <td class="border border-gray-300 px-4 py-3 font-bold text-red-700">Specialized (SilverRail)</td>
+                        <td class="border border-gray-300 px-4 py-3">Narrow focus on Rail markets only</td>
+                        <td class="border border-gray-300 px-4 py-3">High-quality API, but single vertical</td>
+                        <td class="border border-gray-300 px-4 py-3">Basic ticketing & journey planning</td>
+                        <td class="border border-gray-300 px-4 py-3">Rail content only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Key Insights -->
+        <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+                <h3 class="text-lg font-semibold mb-2" style="color: #1D4ED8;">🎯 Unique Market Position</h3>
+                <p class="text-sm text-gray-600">
+                    Distribusion combines <strong>comprehensive ground transport coverage</strong> with <strong>advanced retail functionality</strong> that generalist platforms lack, 
+                    while offering broader scope than specialized rail-only platforms.
+                </p>
+            </div>
+            <div class="p-4 rounded-lg bg-green-50 border-l-4 border-green-500">
+                <h3 class="text-lg font-semibold mb-2 text-green-700">🚀 Strategic Advantages</h3>
+                <p class="text-sm text-gray-600">
+                    <strong>Complete Intermodal Solution:</strong> All surface transport modes | <strong>Advanced Retailing:</strong> ARPR optimization | 
+                    <strong>Operational Simplicity:</strong> One contract, one settlement across all carriers
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: STRATEGIC PITCH FRAMEWORK -->
+    <div id="slide-13" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-6">Strategic Pitch Framework</h1>
+        <p class="text-center text-lg font-semibold text-gray-700 mb-6">Executive-Level Value Communication for High-Leverage Partners</p>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Problem Statement -->
+            <div class="p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                <h3 class="text-base font-semibold text-red-700 mb-2 flex items-center">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 mr-2" style="color: #2563EB;"></i>
+                    1. Fragmentation Problem
+                </h3>
+                <p class="text-xs text-gray-700">
+                    "Your technical teams are managing dozens of fragmented ground transport APIs, creating technical debt and preventing you from capturing the 14.20% CAGR intermodal market. You're missing revenue from seamless multi-modal journeys."
+                </p>
+            </div>
+
+            <!-- Solution Presentation -->
+            <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                <h3 class="text-base font-semibold text-blue-700 mb-2 flex items-center">
+                    <i data-lucide="lightbulb" class="w-4 h-4 mr-2" style="color: #2563EB;"></i>
+                    2. Distribusion Solution
+                </h3>
+                <p class="text-xs text-gray-700">
+                    "One contract, one standardized integration, one settlement. We provide the 'Intermodal Glue' that transforms ground transport from low-margin necessity into high-margin profit center through advanced retailing."
+                </p>
+            </div>
+
+            <!-- Value Demonstration -->
+            <div class="p-3 bg-green-50 rounded-lg border-l-4 border-green-500">
+                <h3 class="text-base font-semibold text-green-700 mb-2 flex items-center">
+                    <i data-lucide="trending-up" class="w-4 h-4 mr-2" style="color: #2563EB;"></i>
+                    3. Measurable Impact
+                </h3>
+                <p class="text-xs text-gray-700">
+                    "90-day POC with < 90 days TTFT, 15%+ ARPR improvement, and > 80% CSV ratio. Transform ground transport into profit center while eliminating technical debt and operational complexity."
+                </p>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="p-3 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                <h3 class="text-base font-semibold text-purple-700 mb-2 flex items-center">
+                    <i data-lucide="target" class="w-4 h-4 mr-2" style="color: #2563EB;"></i>
+                    4. Strategic Partnership
+                </h3>
+                <p class="text-xs text-gray-700">
+                    "Let's initiate a 90-day POC focused on validating rapid TTFT and unlocking immediate ancillary revenue growth. This positions you to capture the highest-growth mobility ecosystems."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: STRATEGIC IMPLEMENTATION ROADMAP -->
+    <div id="slide-14" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-4">Strategic Implementation Roadmap</h1>
+        <div class="grid grid-cols-4 gap-3 mt-4">
+            <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                <h3 class="text-base font-semibold text-blue-700 mb-2 flex items-center"><i data-lucide="search" class="w-4 h-4 mr-2 flex-shrink-0" style="color: #2563EB;"></i> Phase 1: Strategic Targeting</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold text-blue-700">APAC Super Apps</p>
+                        <p class="text-lg font-extrabold text-blue-800">Priority #1</p>
+                        <p class="text-xs text-gray-600">$337B market by 2030</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-blue-700">Tier 1 Identification</p>
+                        <p class="text-lg font-extrabold text-blue-800">50+</p>
+                        <p class="text-xs text-gray-600">High-leverage prospects</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bg-green-50 rounded-lg border-l-4 border-green-500">
+                <h3 class="text-base font-semibold text-green-700 mb-2 flex items-center"><i data-lucide="zap" class="w-4 h-4 mr-2 flex-shrink-0" style="color: #2563EB;"></i> Phase 2: 90-Day POCs</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold text-green-700">POC Launches</p>
+                        <p class="text-lg font-extrabold text-green-800">10+</p>
+                        <p class="text-xs text-gray-600">Strategic partnerships</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-green-700">TTFT Achievement</p>
+                        <p class="text-lg font-extrabold text-green-800">< 90 Days</p>
+                        <p class="text-xs text-gray-600">Time-to-first-transaction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                <h3 class="text-base font-semibold text-yellow-700 mb-2 flex items-center"><i data-lucide="trending-up" class="w-4 h-4 mr-2 flex-shrink-0" style="color: #2563EB;"></i> Phase 3: ARPR Optimization</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold text-yellow-700">Advanced Retailing</p>
+                        <p class="text-lg font-extrabold text-yellow-800">15%+</p>
+                        <p class="text-xs text-gray-600">ARPR improvement</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-yellow-700">Profit Center</p>
+                        <p class="text-lg font-extrabold text-yellow-800">High-Margin</p>
+                        <p class="text-xs text-gray-600">Ground transport transformation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 rounded-lg border-l-4" style="background-color: #EFF6FF; border-color: #2563EB;">
+                <h3 class="text-base font-semibold mb-2 flex items-center" style="color: #1D4ED8;"><i data-lucide="shield" class="w-4 h-4 mr-2 flex-shrink-0" style="color: #2563EB;"></i> Phase 4: Market Dominance</h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">CSV Ratio</p>
+                        <p class="text-lg font-extrabold" style="color: #2563EB;">> 80%</p>
+                        <p class="text-xs text-gray-600">Consolidated settlement volume</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold" style="color: #1D4ED8;">Market Position</p>
+                        <p class="text-lg font-extrabold" style="color: #2563EB;">Dominant</p>
+                        <p class="text-xs text-gray-600">Intermodal transportation leader</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 p-3 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+            <h3 class="text-base font-semibold mb-1" style="color: #1D4ED8;">Strategic Priority: APAC Super Apps First</h3>
+            <p class="text-xs text-gray-600">
+                Focus on <strong>highest-growth mobility ecosystems</strong> to secure market dominance before competitors. 
+                The 14.20% CAGR intermodal market requires rapid execution to capture the $337B APAC opportunity.
+            </p>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: STRATEGIC CONCLUSIONS & RECOMMENDATIONS -->
+    <div id="slide-15" class="presentation-slide">
+        <h1 class="text-4xl header-title border-b pb-3 mb-8">Strategic Conclusions & Recommendations</h1>
+        <div class="grid grid-cols-2 gap-8 mt-8">
+            <div>
+                <h3 class="text-2xl font-semibold mb-4" style="color: #2563EB;">Market Opportunity Validation</h3>
+                <ul class="space-y-3 text-lg text-gray-700 icon-list">
+                    <li><i data-lucide="trending-up" class="text-green-600"></i> <strong>14.20% CAGR Intermodal Market:</strong> Highest growth segment in travel</li>
+                    <li><i data-lucide="globe" class="text-green-600"></i> <strong>$337B APAC Mobility by 2030:</strong> Largest addressable market</li>
+                    <li><i data-lucide="target" class="text-green-600"></i> <strong>Fragmentation Barrier:</strong> Clear product-market fit opportunity</li>
+                    <li><i data-lucide="zap" class="text-green-600"></i> <strong>Technical Simplification:</strong> "One contract, one integration, one settlement"</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold mb-4" style="color: #2563EB;">Strategic Action Plan</h3>
+                <ul class="space-y-3 text-lg text-gray-700 icon-list">
+                    <li><i data-lucide="users" class="text-blue-600"></i> <strong>Priority 1:</strong> APAC Super Apps (Grab, Gojek, WeChat Pay)</li>
+                    <li><i data-lucide="clock" class="text-blue-600"></i> <strong>90-Day POCs:</strong> Validate TTFT < 90 days</li>
+                    <li><i data-lucide="trending-up" class="text-blue-600"></i> <strong>ARPR Focus:</strong> Transform ground transport to profit center</li>
+                    <li><i data-lucide="shield" class="text-blue-600"></i> <strong>CSV Target:</strong> > 80% consolidated settlement volume</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 p-4 rounded-lg" style="background-color: #EFF6FF; border-left: 4px solid #2563EB;">
+            <h3 class="text-lg font-semibold mb-2" style="color: #1D4ED8;">Call to Action: Immediate Strategic Execution</h3>
+            <p class="text-sm text-gray-600">
+                Initiate structured 90-day POCs with identified Tier 1 strategic targets, focused explicitly on validating rapid TTFT and unlocking immediate ancillary revenue growth. 
+                <strong>Speed to market is critical</strong> to secure dominance in the highest-growth mobility ecosystems before competitors establish market presence.
+            </p>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Q&A -->
+    <div id="slide-16" class="presentation-slide flex flex-col justify-center items-center text-center">
+        <h1 class="text-6xl header-title mb-10">Questions & Discussion</h1>
+        <p class="text-3xl text-gray-600 mb-10">Ready to discuss strategic implementation and market penetration.</p>
+        <div class="text-left text-xl text-gray-700">
+            <p class="font-bold">Key Discussion Points:</p>
+            <p>• APAC Super Apps prioritization strategy</p>
+            <p>• 90-day POC framework execution</p>
+            <p>• KPI measurement and success validation</p>
+            <p>• Competitive positioning and differentiation</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: THANK YOU -->
+    <div id="slide-17" class="presentation-slide flex flex-col justify-center items-center text-center">
+        <h1 class="text-6xl header-title mb-6">Thank You</h1>
+        <p class="text-3xl text-gray-700 font-light mb-12">Ready to capture the $337B APAC mobility opportunity and dominate the 14.20% CAGR intermodal market.</p>
+        <p class="footer-logo text-4xl">DISTRIBUSION <span class="text-gray-800">PLATFORM</span></p>
+        <p class="text-lg text-gray-500 mt-4">Strategic Business Development | December 2024</p>
+    </div>
+
+    <!-- --------------------------------- SLIDE CONTENT END --------------------------------- -->
+</div>
+
+<script>
+    const totalSlides = 17;
+    let currentSlideIndex = 1;
+    const slides = [];
+
+    // --- Data Definition for Charts ---
+    const chartData = {
+        // Slide 6 Data (Market Size & Growth)
+        marketSize: {
+            segments: ['Distribution Logistics', 'APAC Mobility', 'Intermodal Transport', 'Airport Ground Transport'],
+            marketSize: [9504.54, 337, 50, 35.1], // Billions (USD/EUR)
+            growthRate: [8, 12, 14.20, 6] // Annual growth %
+        },
+        // Slide 10 Data (KPI Tracking)
+        kpiTracking: {
+            months: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+            ttft: [120, 100, 85, 75, 70, 65], // Time to First Transaction (days)
+            arpr: [5, 8, 12, 15, 18, 20], // Ancillary Revenue Penetration Rate (%)
+            csv: [20, 35, 50, 65, 75, 85] // Consolidated Settlement Volume (%)
+        }
+    };
+
+    // --- Chart Rendering Functions ---
+    
+    // Fallback function to show data as table when Chart.js is not available
+    function showChartFallback(canvasId, title, data) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+        
+        let tableHTML = `<div style="padding: 20px; background: white; border-radius: 8px;">
+            <h3 style="margin: 0 0 15px 0; color: #1e3a8a; font-size: 18px;">${title}</h3>
+            <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+                <thead>
+                    <tr style="background: #f8fafc;">
+                        <th style="padding: 10px; border: 1px solid #e2e8f0; text-align: left;">Segment</th>
+                        <th style="padding: 10px; border: 1px solid #e2e8f0; text-align: right;">Market Size (€B)</th>
+                        <th style="padding: 10px; border: 1px solid #e2e8f0; text-align: right;">Growth Rate (%)</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+        
+        if (data.segments && data.marketSize && data.growthRate) {
+            data.segments.forEach((segment, index) => {
+                const size = data.marketSize[index];
+                const growth = data.growthRate[index];
+                
+                tableHTML += `
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: 600;">${segment}</td>
+                        <td style="padding: 10px; border: 1px solid #e2e8f0; text-align: right; color: #3b82f6; font-weight: 600;">€${size}B</td>
+                        <td style="padding: 10px; border: 1px solid #e2e8f0; text-align: right; color: #10b981; font-weight: 600;">+${growth}%</td>
+                    </tr>`;
+            });
+        }
+        
+        tableHTML += `</tbody></table></div>`;
+        
+        canvas.parentNode.innerHTML = tableHTML;
+    }
+
+    // Slide 6: Market Size Chart
+    function renderMarketSizeChart() {
+        if (typeof Chart === 'undefined') {
+            console.warn('Chart.js not available, showing data as table');
+            showChartFallback('marketSizeChart', 'Market Size & Growth Analysis', chartData.marketSize);
+            return;
+        }
+        
+        const ctx = document.getElementById('marketSizeChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.marketSize.segments,
+                datasets: [
+                    {
+                        label: 'Market Size ($B)',
+                        data: chartData.marketSize.marketSize,
+                        backgroundColor: (context) => {
+                            const label = context.chart.data.labels[context.dataIndex];
+                            if (label.includes('APAC')) return '#10B981'; // Green for APAC priority
+                            if (label.includes('Intermodal')) return '#F59E0B'; // Orange for high growth
+                            return '#2563EB'; // Blue for others
+                        },
+                        borderRadius: 4,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: false },
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => {
+                                const value = context.parsed.y;
+                                const label = context.label;
+                                if (label.includes('Distribution Logistics')) return `$${value.toFixed(1)}T Total Market`;
+                                return `$${value}B Market Size`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Market Size ($B)' },
+                        ticks: {
+                            callback: function(value) {
+                                if (value >= 1000) return '$' + (value/1000).toFixed(1) + 'T';
+                                return '$' + value + 'B';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Slide 10: KPI Tracking Chart
+    function renderKpiTrackingChart() {
+        if (typeof Chart === 'undefined') {
+            console.warn('Chart.js not available for KPI tracking chart');
+            return;
+        }
+        
+        const ctx = document.getElementById('kpiTrackingChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartData.kpiTracking.months,
+                datasets: [
+                    {
+                        label: 'Time-to-First-Transaction (Days)',
+                        data: chartData.kpiTracking.ttft,
+                        borderColor: '#2563EB',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        tension: 0.4,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Ancillary Revenue Penetration Rate (%)',
+                        data: chartData.kpiTracking.arpr,
+                        borderColor: '#10B981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    },
+                    {
+                        label: 'Consolidated Settlement Volume (%)',
+                        data: chartData.kpiTracking.csv,
+                        borderColor: '#F59E0B',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: false },
+                    legend: { position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => {
+                                const value = context.parsed.y;
+                                if (context.dataset.label.includes('TTFT')) return `${context.dataset.label}: ${value} days`;
+                                return `${context.dataset.label}: ${value}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: 'Days' },
+                        reverse: true // Lower is better for TTFT
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: { display: true, text: 'Percentage (%)' },
+                        grid: {
+                            drawOnChartArea: false,
+                        },
+                    }
+                }
+            }
+        });
+    }
+
+    // Replace Lucide icons with text fallbacks
+    function replaceIconsWithText() {
+        const iconElements = document.querySelectorAll('i[data-lucide]');
+        const iconMap = {
+            'search': '🔍',
+            'target': '🎯',
+            'chevrons-right': '▶️',
+            'bar-chart-3': '📊',
+            'message-square': '💬',
+            'trending-up': '📈',
+            'help-circle': '❓',
+            'globe': '🌍',
+            'bus': '🚌',
+            'smartphone': '📱',
+            'building': '🏢',
+            'map-pin': '📍',
+            'users': '👥',
+            'mail': '📧',
+            'phone': '📞',
+            'linkedin': '💼',
+            'calendar': '📅',
+            'file-text': '📄',
+            'presentation': '📊',
+            'award': '🏆',
+            'check-circle': '✅',
+            'alert-triangle': '⚠️',
+            'lightbulb': '💡',
+            'handshake': '🤝',
+            'trophy': '🏆',
+            'dollar-sign': '💰',
+            'zap': '⚡',
+            'shield': '🛡️',
+            'clock': '🕐',
+            'settings': '⚙️',
+            'headphones': '🎧'
+        };
+        
+        iconElements.forEach(element => {
+            const iconName = element.getAttribute('data-lucide');
+            const fallbackText = iconMap[iconName] || '•';
+            element.innerHTML = fallbackText;
+            element.style.fontSize = '1.2em';
+        });
+    }
+
+    // --- Slide Management Logic ---
+
+    function setupSlides() {
+        for (let i = 1; i <= totalSlides; i++) {
+            const slide = document.getElementById(`slide-${i}`);
+            if (slide) {
+                slides.push(slide);
+            }
+        }
+        showSlide(currentSlideIndex);
+    }
+
+    function showSlide(index) {
+        if (index < 1 || index > totalSlides) return;
+
+        // Hide all slides
+        slides.forEach(slide => slide.style.display = 'none');
+
+        // Show the current slide
+        const currentSlide = slides[index - 1];
+        if (currentSlide) {
+            currentSlide.style.display = 'flex';
+            currentSlide.style.flexDirection = 'column';
+            currentSlideIndex = index;
+
+            // Update page number
+            document.getElementById('pageNumber').textContent = `Slide ${currentSlideIndex} / ${totalSlides}`;
+            
+            // Enable/disable buttons
+            document.getElementById('prevBtn').disabled = currentSlideIndex === 1;
+            document.getElementById('nextBtn').disabled = currentSlideIndex === totalSlides;
+            document.getElementById('prevBtn').classList.toggle('opacity-50', currentSlideIndex === 1);
+            document.getElementById('nextBtn').classList.toggle('opacity-50', currentSlideIndex === totalSlides);
+
+            // Render charts for specific slides
+            if (index === 6) renderMarketSizeChart();
+            if (index === 10) renderKpiTrackingChart();
+
+            // Re-render Lucide icons on the current slide
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            } else {
+                console.warn('Lucide icons not available, using fallback');
+                // Replace icon elements with text fallbacks
+                replaceIconsWithText();
+            }
+        }
+    }
+
+    function goToNextSlide() {
+        showSlide(currentSlideIndex + 1);
+    }
+
+    function goToPrevSlide() {
+        showSlide(currentSlideIndex - 1);
+    }
+
+    // Event Listeners
+    document.getElementById('nextBtn').addEventListener('click', goToNextSlide);
+    document.getElementById('prevBtn').addEventListener('click', goToPrevSlide);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === ' ') {
+            goToNextSlide();
+        } else if (event.key === 'ArrowLeft') {
+            goToPrevSlide();
+        }
+    });
+
+    // Check if required libraries are loaded
+    function checkLibraries() {
+        const errors = [];
+        
+        if (typeof Chart === 'undefined') {
+            errors.push('Chart.js not loaded');
+        }
+        
+        if (typeof lucide === 'undefined') {
+            errors.push('Lucide icons not loaded');
+        }
+        
+        if (errors.length > 0) {
+            console.error('Loading errors:', errors);
+            showErrorMessage(errors);
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Show error message to user
+    function showErrorMessage(errors) {
+        const errorDiv = document.createElement('div');
+        errorDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #dc2626;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            max-width: 500px;
+            text-align: center;
+        `;
+        errorDiv.innerHTML = `
+            <h3 style="margin: 0 0 10px 0; font-weight: bold;">⚠️ Loading Issue</h3>
+            <p style="margin: 0 0 10px 0;">The following libraries failed to load:</p>
+            <ul style="margin: 0; padding-left: 20px; text-align: left;">
+                ${errors.map(error => `<li>${error}</li>`).join('')}
+            </ul>
+            <p style="margin: 10px 0 0 0; font-size: 14px;">
+                <strong>Solution:</strong> Check your internet connection and reload the page.
+            </p>
+        `;
+        document.body.appendChild(errorDiv);
+        
+        // Remove error message after 10 seconds
+        setTimeout(() => {
+            if (errorDiv.parentNode) {
+                errorDiv.parentNode.removeChild(errorDiv);
+            }
+        }, 10000);
+    }
+    
+    // Wait for libraries to load before initializing
+    function waitForLibraries() {
+        let attempts = 0;
+        const maxAttempts = 50; // 5 seconds max wait
+        
+        const checkInterval = setInterval(() => {
+            attempts++;
+            
+            if (checkLibraries()) {
+                clearInterval(checkInterval);
+                setupSlides();
+                console.log('✅ All libraries loaded successfully!');
+            } else if (attempts >= maxAttempts) {
+                clearInterval(checkInterval);
+                console.error('❌ Timeout: Libraries did not load in time');
+                // Try to setup slides anyway with fallbacks
+                setupSlides();
+            }
+        }, 100);
+    }
+    
+    // Start the application
+    waitForLibraries();
+</script>
+
+</body>
+</html>
